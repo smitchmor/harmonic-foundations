@@ -144,7 +144,7 @@ $hook.analyzeChord = function(data) {
 		color:''
 	}
 
-	console.log($hook.mode + ":" + data.sd + ":" + data.borrowed);
+	//console.log($hook.mode + ":" + data.sd + ":" + data.borrowed);
 
 	if (data.isRest == 1) {
 		chord.isRest = true;
