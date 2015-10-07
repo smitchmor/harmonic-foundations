@@ -135,17 +135,17 @@ $hf.cd = function (degreeArray, degreeIndex) {
 
 
 $hf.chordDegree2 = [
-    [['Six ' + $hf.sharp, $hf.chromaticDegree[0].color], $hf.cd([$hf.sharp + 'I', $hf.sharp +'ii', $hf.sharp + 'iii', $hf.sharp + 'IV', $hf.sharp + 'v', $hf.sharp + 'vi', 'VII'], 4)],
-    [['Five ' + $hf.sharp, $hf.chromaticDegree[0].color], $hf.cd([$hf.sharp + 'i', $hf.sharp + 'ii', 'III', $hf.sharp + 'IV', $hf.sharp + 'v', $hf.sharp + 'vi', $hf.flat + 'VII'], 1)],
-    [['Four ' + $hf.sharp, $hf.chromaticDegree[0].color], $hf.cd(['i','ii',$hf.flat + 'III','IV','v','vi',$hf.flat + 'vii'], 5)],
-    [['Three ' + $hf.sharp, $hf.chromaticDegree[0].color], $hf.cd(['i','ii','iii','IV','v','vi', $hf.flat + 'vii'], 2)],
-    [['Two ' + $hf.sharp, $hf.chromaticDegree[0].color], $hf.cd(['i','ii','iii','IV','V','vi','vii'], 6)],
-    [['Lydian', $hf.chromaticDegree[5].color], $hf.cd(['i','ii','iii','IV','v','vi', $hf.flat + 'vii'], 3)],
+    [['Six ' + $hf.sharp, $hf.chromaticDegree[6].color], $hf.cd([$hf.sharp + 'I', $hf.sharp +'ii', $hf.sharp + 'iii', $hf.sharp + 'IV', $hf.sharp + 'v', $hf.sharp + 'vi', 'VII'], 4)],
+    [['Five ' + $hf.sharp, $hf.chromaticDegree[1].color], $hf.cd([$hf.sharp + 'i', $hf.sharp + 'ii', 'III', $hf.sharp + 'IV', $hf.sharp + 'v', $hf.sharp + 'vi', 'VII'], 1)],
+    [['Four ' + $hf.sharp, $hf.chromaticDegree[8].color], $hf.cd([$hf.sharp + 'i', $hf.sharp + 'ii', 'III', $hf.sharp + 'iv', $hf.sharp + 'v', 'VI', 'VII'], 5)],
+    [['Three ' + $hf.sharp, $hf.chromaticDegree[3].color], $hf.cd([$hf.sharp + 'i','II','III', $hf.sharp + 'iv', $hf.sharp + 'v','VI', 'vii'], 2)],
+    [['Two ' + $hf.sharp, $hf.chromaticDegree[10].color], $hf.cd([$hf.sharp + 'i','II','iii', $hf.sharp + 'iv', 'V','VI','vii'], 6)],
+    [['Lydian', $hf.chromaticDegree[5].color], $hf.cd(['I','II','iii', $hf.sharp + 'iv','V','vi', 'vii'], 3)],
     [['Ionian', $hf.chromaticDegree[0].color], $hf.cd(['I','ii','iii','IV','V','vi','vii'], 0)],
-    [['Mixolydian', $hf.chromaticDegree[7].color], $hf.cd(['I','ii','iii','IV','v','vi', $hf.flat + 'vii'], 4)],
-    [['Dorian', $hf.chromaticDegree[2].color], $hf.cd(['i','ii',$hf.flat + 'III','IV','v','vi',$hf.flat + 'vii'], 1)],
-    [['Aeolian', $hf.chromaticDegree[9].color], $hf.cd(['i','ii','iii','IV','v','vi', $hf.flat + 'vii'], 5)],
-    [['Phyrgian', $hf.chromaticDegree[4].color], $hf.cd(['i','ii','iii','IV','V','vi','vii'], 2)],
-    [['Locrian', $hf.chromaticDegree[11].color], $hf.cd(['i','ii','iii','IV','v','vi', $hf.flat + 'vii'], 6)],
-    [['Six ' + $hf.flat, $hf.chromaticDegree[0].color], $hf.cd([$hf.flat + 'i','ii','iii','IV','v','vi', $hf.flat + 'vii'], 3)]
+    [['Mixolydian', $hf.chromaticDegree[7].color], $hf.cd(['I','ii','iii','IV','v','vi', $hf.flat + 'VII'], 4)],
+    [['Dorian', $hf.chromaticDegree[2].color], $hf.cd(['i','ii',$hf.flat + 'III','IV','v','vi',$hf.flat + 'VII'], 1)],
+    [['Aeolian', $hf.chromaticDegree[9].color], $hf.cd(['i','ii','iii','IV','v','vi', $hf.flat + 'VII'], 5)],
+    [['Phyrgian', $hf.chromaticDegree[4].color], $hf.cd(['i', $hf.flat + 'II','iii','IV','V','vi', $hf.flat + 'vii'], 2)],
+    [['Locrian', $hf.chromaticDegree[11].color], $hf.cd(['i', $hf.flat + 'II','iii','IV','v','vi', $hf.flat + 'vii'], 6)],
+    [['Six ' + $hf.flat, $hf.chromaticDegree[6].color], $hf.cd([$hf.flat + 'i', $hf.flat + 'II','iii','IV','v','vi', $hf.flat + 'vii'], 3)]
 ];
