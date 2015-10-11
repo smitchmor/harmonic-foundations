@@ -126,15 +126,13 @@ $hf.cd = function (degreeArray, degreeIndex) {
     var DEGREES = 7;
     for (var x = 0, y = degreeIndex; x < DEGREES; x++, y++) {
         data = data.concat([[degreeArray[x], $hf.degree[y].seventh, $hf.degree[y].color]]);
-//          data = data.concat([[degreeArray[x], y]]);
-        if (y%(DEGREES-1) === 0 ) 
-            {y = 0;}
+        if (y === DEGREES-1)
+            {y = -1;}
     }
     return data;
 };
 
-
-$hf.chordDegree2 = [
+$hf.chordDegree = [
     [['Six ' + $hf.sharp, $hf.chromaticDegree[6].color], $hf.cd([$hf.sharp + 'I', $hf.sharp +'ii', $hf.sharp + 'iii', $hf.sharp + 'IV', $hf.sharp + 'v', $hf.sharp + 'vi', 'VII'], 4)],
     [['Five ' + $hf.sharp, $hf.chromaticDegree[11].color], $hf.cd([$hf.sharp + 'i', $hf.sharp + 'ii', 'III', $hf.sharp + 'IV', $hf.sharp + 'v', $hf.sharp + 'vi', 'VII'], 1)],
     [['Four ' + $hf.sharp, $hf.chromaticDegree[4].color], $hf.cd([$hf.sharp + 'i', $hf.sharp + 'ii', 'III', $hf.sharp + 'iv', $hf.sharp + 'v', 'VI', 'VII'], 5)],
@@ -148,4 +146,14 @@ $hf.chordDegree2 = [
     [['Phyrgian', $hf.chromaticDegree[8].color], $hf.cd(['i', $hf.flat + 'II', $hf.flat + 'III','iv','v', $hf.flat + 'VI', $hf.flat + 'vii'], 2)],
     [['Locrian', $hf.chromaticDegree[1].color], $hf.cd(['i', $hf.flat + 'II', $hf.flat + 'iii','iv',  $hf.flat + 'v',  $hf.flat + 'vi', $hf.flat + 'vii'], 6)],
     [['Six ' + $hf.flat, $hf.chromaticDegree[6].color], $hf.cd([$hf.flat + 'i', $hf.flat + 'II', $hf.flat + 'iii','iv', $hf.flat + 'V', $hf.flat + 'vi', $hf.flat + 'vii'], 3)]
+];
+
+$hf.hookMode = [
+    $hf.chordDegree[6],
+    $hf.chordDegree[8],
+    $hf.chordDegree[10], 
+    $hf.chordDegree[5],
+    $hf.chordDegree[7],  
+    $hf.chordDegree[9],
+    $hf.chordDegree[11],
 ];
