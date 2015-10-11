@@ -5,7 +5,7 @@ $hf.vis.hookChords = {
 	borderThickness: 0,
 	border: false,
 	top: 0,
-	bottom: 10,
+	bottom: 20,
 	left: 24,
 	chord: {
 		stroke: 'black',
@@ -42,7 +42,6 @@ $hook.drawChords = function(x, y, data, visualizations) {
 			$hf.vis[visualizations[i]].bottom;
 		}
 	}
-	console.log("visualizationsHeight: " + visualizationsHeight);
 
 	if ($.isArray(data) == true) {
 		for (var i = 0; i < data.length ; i++) {
@@ -126,6 +125,22 @@ $hook.drawChord = function(x, y, data, visualizations, visualizationsHeight) {
 		$hf.stage.stage.add(layer);
 
 	}
+
+	var modeColor = ($hf.hookMode[$hook.mode-1][0][1]);
+
+	var mode = new Kinetic.Rect({
+		x: x,
+		y: y + $hf.vis.hookChords.height + 5,
+		width: chordWidth,
+		height: 3,
+		fill: modeColor,
+//		stroke: $hf.vis.hookChords.chord.stroke,
+		strokeWidth: $hf.vis.hookChords.chord.strokeWidth,
+		cornerRadius: $hf.vis.hookChords.chord.cornerRadius
+	});
+	layer.add(mode);
+	$hf.stage.stage.add(layer);
+
 	return x + chordWidth;
 }
 
@@ -151,11 +166,10 @@ $hook.analyzeChord = function(data) {
 		chord.isRest = false;
 	}
 	
-	//console.log($hf.hookMode);
-
 	chord.roman = $hf.hookMode[$hook.mode-1][1][data.sd-1][0];
 	chord.color = $hf.hookMode[$hook.mode-1][1][data.sd-1][2];
 
+/*
 	chord.solfege = $hf.degree[parseInt(data.sd)-1].solfege;
 	chord.suspended = data.sus;
 	chord.figuredBass = data.fb;
@@ -203,6 +217,7 @@ $hook.analyzeChord = function(data) {
 
 		}
 	}
+*/
 
 	if (data.borrowed != '') {
 		chord = $hook.handleBorrowedChords(chord);
