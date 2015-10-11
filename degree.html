@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html style="text-align: center;">
+<head>
+	<script type="text/javascript" src="./lib/jquery-2.0.3.js"> </script>
+	<script type="text/javascript" src="./lib/kinetic-v5.1.0.min.js"></script>
+	<script type="text/javascript" src="./lib/xml2json-v1.1.5.js"></script>
+	<script type="text/javascript" src="./lib/purl-2.3.1.js"></script>
+
+
+	
+</head>
+<body>
+	<p id="matrix"></p>
+	<script defer="defer">
+		$hf = {};
+	</script>
+	<script type="text/javascript" src="./src/degree.js"></script>
+	<script defer="defer">
+	$hf.chordDegree2.forEach(function (element, index, array) {
+		$('#matrix').append(
+		'<div>' + element[0][0] + '</div>'
+		);
+		$('#matrix div').last().css('background-color', element[0][1]);
+			element[1].forEach(function (element, index, array) {
+			//console.log(element);
+		$('#matrix div').last().append(
+			'<span>' + element[0] + element[1] + '</span>'
+		);
+		$('#matrix span').last().css('background-color', element[2]);  
+	});
+	//console.log("---");
+});
+	</script>
+
+</body>
+</html>
