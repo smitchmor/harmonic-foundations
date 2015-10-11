@@ -17,7 +17,7 @@ $hf.vis.footer.init = function(data) {
 		this.mode = parseInt(data.super.meta.mode);
 		this.artist = data.super.meta.artist;
 		this.BPM = data.super.meta.BPM;
-		this.modeName = $hf.chordDegree[this.mode-1][0];
+		this.modeName = $hf.hookMode[this.mode-1][0][0];
 }
 $hf.vis.footer.render = function(x, y, data) {
 	this.init(data);
