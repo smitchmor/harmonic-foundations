@@ -144,8 +144,6 @@ $hook.analyzeChord = function(data) {
 		color:''
 	}
 
-	//console.log($hook.mode + ":" + data.sd + ":" + data.borrowed);
-
 	if (data.isRest == 1) {
 		chord.isRest = true;
 		return chord;
@@ -153,12 +151,14 @@ $hook.analyzeChord = function(data) {
 		chord.isRest = false;
 	}
 	
-	chord.roman = $hf.chordDegree[$hook.mode-1][data.sd][0];
+	//console.log($hf.hookMode);
+
+	chord.roman = $hf.hookMode[$hook.mode-1][1][data.sd-1][0];
+	chord.color = $hf.hookMode[$hook.mode-1][1][data.sd-1][2];
+
 	chord.solfege = $hf.degree[parseInt(data.sd)-1].solfege;
 	chord.suspended = data.sus;
 	chord.figuredBass = data.fb;
-
-	chord.color = $hf.chordDegree[$hook.mode-1][data.sd][2];
 
 	if (data.emb != undefined) {
 		chord.embellished = data.emb;
