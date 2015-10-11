@@ -1,5 +1,4 @@
 $hf.vis.Visualization = function (x, y, data) {
-	console.log('Visualization initialized...');
 	this.top = 0;
 	this.left = 0;
 	this.height = 0;
