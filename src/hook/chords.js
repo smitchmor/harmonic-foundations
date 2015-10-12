@@ -82,7 +82,7 @@ $hook.drawChord = function(x, y, data, visualizations, visualizationsHeight) {
 	chord = $hook.analyzeChord(data);
 	chordText = $hook.renderChordText(chord);
 
-	var chord = new Kinetic.Rect({
+	var kChord = new Kinetic.Rect({
 		x: x,
 		y: y,
 		width: chordWidth,
@@ -92,7 +92,7 @@ $hook.drawChord = function(x, y, data, visualizations, visualizationsHeight) {
 		strokeWidth: $hf.vis.hookChords.chord.strokeWidth,
 		cornerRadius: $hf.vis.hookChords.chord.cornerRadius
 	});
-	layer.add(chord);
+	layer.add(kChord);
 	$hf.stage.stage.add(layer);
 
 	var border = $hf.vis.hookChords.chord.border;
@@ -126,14 +126,12 @@ $hook.drawChord = function(x, y, data, visualizations, visualizationsHeight) {
 
 	}
 
-	var modeColor = ($hf.hookMode[$hook.mode-1][0][1]);
-
 	var mode = new Kinetic.Rect({
 		x: x,
 		y: y + $hf.vis.hookChords.height + 5,
 		width: chordWidth,
 		height: 3,
-		fill: modeColor,
+		fill: chord.keyColor,
 //		stroke: $hf.vis.hookChords.chord.stroke,
 		strokeWidth: $hf.vis.hookChords.chord.strokeWidth,
 		cornerRadius: $hf.vis.hookChords.chord.cornerRadius
@@ -156,7 +154,8 @@ $hook.analyzeChord = function(data) {
 		suspended: '',
 		embellished: '',
 		secondary: '',
-		color:''
+		color:'',
+		keyColor: ''
 	}
 
 	if (data.isRest == 1) {
@@ -168,6 +167,7 @@ $hook.analyzeChord = function(data) {
 	
 	chord.roman = $hf.hookMode[$hook.mode-1][1][data.sd-1][0];
 	chord.color = $hf.hookMode[$hook.mode-1][1][data.sd-1][2];
+	chord.keyColor = $hf.hookMode[$hook.mode-1][0][1];
 
 /*
 	chord.solfege = $hf.degree[parseInt(data.sd)-1].solfege;
@@ -220,7 +220,8 @@ $hook.analyzeChord = function(data) {
 */
 
 	if (data.borrowed != '') {
-		chord = $hook.handleBorrowedChords(chord);
+		console.log(data.borrowed + ":" + data.sd);
+		chord = $hook.handleBorrowedChords(data, chord);
 	}
 	return chord;
 }
@@ -248,8 +249,14 @@ $hook.renderChordText = function(chord) {
 }
 
 
-$hook.handleBorrowedChords = function(chord) {
-	chord.roman = '____';
+$hook.handleBorrowedChords = function(data, chord) {
+	var borrowerKey = data.borrowed;
+
+	chord.roman = $hf.chordDegree[6 - borrowerKey][1][data.sd-1][0];
+	chord.color = $hf.chordDegree[6 - borrowerKey][1][data.sd-1][2];
+	chord.keyColor = $hf.chordDegree[6 - borrowerKey][0][1];
+
+//	chord.roman = '____';
 	chord.seventh = '';
 	return chord;
 }
