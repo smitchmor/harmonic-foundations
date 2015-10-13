@@ -4,12 +4,12 @@ $hf.vis.footer = {
 		borderColor: "#000",
 		borderThickness: 1,
 		border: false,
-		left: 50,
+		left: 25,
 		top: 0,
 		bottom: 0,
 		fontSize: 12,
 		fontFamily: 'Verdana',
-		fill: 'black'
+		fill: 'white'
 };
 $hf.vis.footer.init = function(data) {
 		this.beatsInMeasure = data.super.meta.beats_in_measure;
@@ -25,8 +25,8 @@ $hf.vis.footer.render = function(x, y, data) {
 	var footerText = "Artist: " + this.artist;
 	footerText = footerText + " | Beats in Measure: " + this.beatsInMeasure;
 	footerText = footerText + " | BPM: " + this.BPM;
-	footerText = footerText + " | Key: " + this.key; 
-	footerText = footerText + " | Mode: " + this.modeName; 
+	footerText = footerText + " | Mode: " + this.modeName + 
+	' | smitchmor...'; 
 
 	var text = new Kinetic.Text ({
 		x: x,

@@ -17,7 +17,7 @@ $hf.vis.hookChords = {
 	text: {
 		y: 6,
 		type: 'roman',
-		fontSize: 18,
+		fontSize: 26,
 		fontFamily: 'Verdana',
 		fill: '#000000',
 		inversionType: 'popular', //popular
@@ -130,7 +130,7 @@ $hook.drawChord = function(x, y, data, visualizations, visualizationsHeight) {
 		x: x,
 		y: y + $hf.vis.hookChords.height + 5,
 		width: chordWidth,
-		height: 3,
+		height: 5,
 		fill: chord.keyColor,
 //		stroke: $hf.vis.hookChords.chord.stroke,
 		strokeWidth: $hf.vis.hookChords.chord.strokeWidth,

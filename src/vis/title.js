@@ -9,7 +9,7 @@ $hf.vis.title = {
 		bottom: 5,
 		fontSize: 36,
 		fontFamily: 'Verdana',
-		fill: 'black'
+		fill: 'white'
 };
 $hf.vis.title.init = function(data) {
 	this.title = data.super.meta.title;
