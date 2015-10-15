@@ -61,15 +61,9 @@ $hook.drawSegments = function(x, y, data) {
 $hook.drawSegment = function(x, y, types, data) {
 	for (var i = 0; i < types.length ; i++) {
 		if ($.isArray(types[i].chords)) {
-//			for (var j = 0; j < types[i].chords.length ; j++) {
-//				console.log(types[i].chords[j]);
-				y = $hook.drawChords(x, y, data.chords.chord, types[i].chords);
-//			}
+			y = $hook.drawChords(x, y, data.chords.chord, types[i].chords);
 		} else if ($.isArray(types[i].notes)) {
-//			for (var j = 0; j < types[i].notes.length ; j++) {
-//				console.log(types[i].notes[j]);
-				y = $hook.drawNotes(x, y, data.notes.note, types[i].notes);
-//			}
+			y = $hook.drawNotes(x, y, data.notes.note, types[i].notes);
 		} else {
 			console.log('unsuppored segment type');
 		}

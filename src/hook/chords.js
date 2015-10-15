@@ -169,7 +169,7 @@ $hook.analyzeChord = function(data) {
 	chord.color = $hf.hookMode[$hook.mode-1][1][data.sd-1][2];
 	chord.keyColor = $hf.hookMode[$hook.mode-1][0][1];
 
-/*
+/*  TEMPORARILY DISABLED FUNCTIONALITY
 	chord.solfege = $hf.degree[parseInt(data.sd)-1].solfege;
 	chord.suspended = data.sus;
 	chord.figuredBass = data.fb;
@@ -217,7 +217,7 @@ $hook.analyzeChord = function(data) {
 
 		}
 	}
-*/
+TEMPORARILY DISABLED FUNCTIONALITY */
 
 	if (data.borrowed != '') {
 		console.log(data.borrowed + ":" + data.sd);

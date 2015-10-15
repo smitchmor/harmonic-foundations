@@ -16,16 +16,6 @@ $hf.vis.hookNotes = {
 	}
 };
 
-/* 
-$hf.vis.hookNotes.init = function(data) {
-	$hook.initializeData(data);
-}
-
-$hf.vis.hookNotes.render = function(data) {
-	//this.init(data);
-	//$hook.drawNotes(data);
-}
-*/
 $hook.analyzeNote = function(data) {
 	var y = 'NAN';
 	var accidental = 0;

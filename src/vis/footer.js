@@ -28,6 +28,8 @@ $hf.vis.footer.render = function(x, y, data) {
 	footerText = footerText + " | Mode: " + this.modeName + 
 	' | smitchmor...'; 
 
+	var footerText = "smitchmor...";
+
 	var text = new Kinetic.Text ({
 		x: x,
 		y: y,
