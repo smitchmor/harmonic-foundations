@@ -1,3 +1,5 @@
+/* musical notation */
+
 $hf.flat = String.fromCharCode(9837);
 $hf.sharp= String.fromCharCode(9839);
 $hf.maj7 = String.fromCharCode(9651) + '7';
@@ -5,6 +7,7 @@ $hf.min7 = '-7';
 $hf.halfDim7 = String.fromCharCode(248) + '7';
 $hf.dim = String.fromCharCode(176);
 
+/* establish attributes of major scale */
 
 $hf.degree = [{
     solfege: "do",
@@ -50,6 +53,8 @@ $hf.degree = [{
     diatonic: true
 }];
 
+/* include chromatic notes */
+
 $hf.chromaticDegree = [
 $hf.degree[0], {
     solfege: "ra",
@@ -84,12 +89,17 @@ $hf.degree[5], {
 },
 $hf.degree[6]];
 
+//???? needs assessment ????
 //$hf.reversedChromaticDegree = $hf.chromaticDegree.reverse(); //used for voice leading???
+//$hf.secondaryDominant = {color:"rgba(0, 0, 0, 1)",
+//        degree: ['*', 'i','ii','iii','iv','v','vii','vii']};
+//$hf.borrowed = {color:"rgba(0, 0, 0, 1)"};
+
+/* handle rests */
 
 $hf.rest = {solfege: "--", roman: "--", color:"rgba(224, 224, 224, 1)"};
-$hf.secondaryDominant = {color:"rgba(0, 0, 0, 1)",
-		degree: ['*', 'i','ii','iii','iv','v','vii','vii']};
-$hf.borrowed = {color:"rgba(0, 0, 0, 1)"};
+
+/* chord color and diatonic sevenths determined by scale order, requires modular addition*/
 
 $hf.cd = function (degreeArray, degreeIndex) {
     var data = [];
@@ -101,6 +111,8 @@ $hf.cd = function (degreeArray, degreeIndex) {
     }
     return data;
 };
+
+/* keys arranged in cycle of fifths */
 
 $hf.chordDegree = [
     [['Six ' + $hf.sharp, $hf.chromaticDegree[6].color], $hf.cd([$hf.sharp + 'I', $hf.sharp +'ii', $hf.sharp + 'iii', $hf.sharp + 'IV', $hf.sharp + 'v', $hf.sharp + 'vi', 'VII'], 4)],
@@ -118,12 +130,14 @@ $hf.chordDegree = [
     [['Six ' + $hf.flat, $hf.chromaticDegree[6].color], $hf.cd([$hf.flat + 'i', $hf.flat + 'II', $hf.flat + 'iii','iv', $hf.flat + 'V', $hf.flat + 'vi', $hf.flat + 'vii'], 3)]
 ];
 
+/* Index of $hf.chordDegree, index cooresponds to modes in decending order */
+
 $hf.hookMode = [
-    $hf.chordDegree[6],
-    $hf.chordDegree[8],
-    $hf.chordDegree[10], 
-    $hf.chordDegree[5],
-    $hf.chordDegree[7],  
-    $hf.chordDegree[9],
-    $hf.chordDegree[11],
+    $hf.chordDegree[6],  //Lydian
+    $hf.chordDegree[8],  //Ionian
+    $hf.chordDegree[10], //Mixolydian
+    $hf.chordDegree[5],  //Dorian
+    $hf.chordDegree[7],  //Aeolian
+    $hf.chordDegree[9],  //Phyrigian
+    $hf.chordDegree[11], //Locrian
 ];
