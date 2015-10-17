@@ -19,7 +19,7 @@ $hf.vis.title.render = function(x, y, data) {
 	var text = new Kinetic.Text ({
 			x: x,
 			y: y,
-			text: '',
+			text: '', // REMOVED TO MEET Content Usage Policy REQS
 			fontSize: this.fontSize,
 			fontFamily: this.fontFamily,
 			fill: this.fill,

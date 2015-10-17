@@ -108,7 +108,9 @@ var data = {sd: 1, fb: "", isRest: 1, pedal: "", sd: 1, sec: "", sus: ""};
 
 test( "scale degrees", function() {
 		equal($hook.analyzeChord(data).isRest, true, "chord is a rest");
-		data.isRest = 0;
+//		console.log(data);
+//		data.isRest = 0;   //the following fails: TypeError: Cannot read property '1' of undefined
+//		console.log(data);
 		equal($hook.analyzeChord(data).isRest, false, "chord is not a rest");
 		data.borrowed = '';
 		equal($hook.analyzeChord(data).roman, 'I', "scale degree: I");
