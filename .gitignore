@@ -1,0 +1,10 @@
+*.diff
+*.patch
+*.bak
+.idea
+npm-debug.log
+node_modules
+lib/
+static/
+reports/
+build/build.txt
